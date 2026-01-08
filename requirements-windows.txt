@@ -1,0 +1,9 @@
+# Python 3.8 (recommended for Windows 7 compatibility)
+
+pywin32==302
+pyWinhook==1.6.2
+pyperclip==1.8.0
+future==0.18.3
+PySide2==5.15.2.1
+loguru==0.6.0
+json5==0.9.10
