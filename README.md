@@ -1,26 +1,22 @@
 <div align="center">
 
-# KeymouseGo
+# KeymouseGo (Windows 7 兼容版)
 
 <br>
 <img src="Preview.png" width="50%" height="50%" />
 
 <div>
-    <img alt="platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blueviolet">
+    <img alt="platform" src="https://img.shields.io/badge/platform-Windows%207%2F8%2F10%2F11-blueviolet">
 </div>
 <div>
     <img alt="license" src="https://img.shields.io/github/license/taojy123/KeymouseGo">
-    <img alt="language" src="https://img.shields.io/badge/python-%3E%3D%203.7-green">
-    <img alt="stars" src="https://img.shields.io/github/stars/taojy123/KeymouseGo?style=social">
-</div>
-<div>
-    <a href="https://deepwiki.com/taojy123/KeymouseGo">
-        <img src="https://devin.ai/assets/deepwiki-badge.png" alt="Ask DeepWiki.com" height="20"/>
-    </a>
+    <img alt="language" src="https://img.shields.io/badge/python-3.7-green">
 </div>
 <br>
 
 [简体中文](README.md) | [English](README_en-US.md)
+
+**本分支专为 Windows 7 兼容性优化，使用 PySide2 替代 PySide6**
 
 </div>
 
@@ -41,25 +37,29 @@
 
 # 安装
 
-该软件通过 `Python` 语言编写，已打包为可执行文件，未安装 `Python` 的用户可直接下载 [release](https://github.com/taojy123/KeymouseGo/releases) 版本 ，直接点击 `KeymouseGo` 运行
+## Windows 7 用户
 
-### 源码打包可执行文件
+直接下载 [release](https://github.com/dhav789/KeymouseGo/releases) 版本的 `KeymouseGo.exe` 运行即可。
 
-```
-1. 安装 Python3
-2. pip安装依赖
-- (Windows) pip install -r requirements-windows.txt
-- (Linux/MacOS) pip3 install -r requirements-universal.txt
-3. pip安装pyinstaller
--  pip install pyinstaller
-4. pyinstaller打包
-- (Windows) pyinstaller -F -w --add-data "./assets;assets" KeymouseGo.py
-- (Linux X11) pyinstaller -F -w --add-data "./assets:assets" --hidden-import "pynput.keyboard._xorg" --hidden-import "pynput.mouse._xorg" KeymouseGo.py
-- (Linux Wayland) pyinstaller -F -w --add-data "./assets:assets"  --hidden-import "pynput.keyboard._uinput" --hidden-import "pynput.mouse._uinput" KeymouseGo.py
-- (MacOS) pyinstaller -F -w --add-data "./assets:assets" --hidden-import "pynput.keyboard._darwin" --hidden-import "pynput.mouse._darwin" KeymouseGo.py
+## 从源码运行
+
+```bash
+# 安装 Python 3.7
+# 安装依赖
+pip install -r requirements-windows.txt
+
+# 运行
+python KeymouseGo.py
 ```
 
-打包完成后，可执行文件在项目路径的`dist`文件夹内。
+## 打包可执行文件
+
+```bash
+pip install pyinstaller==4.10
+python -m PyInstaller KeymouseGo.spec --clean
+```
+
+打包完成后，可执行文件在 `dist` 文件夹内。
 
 # 使用方法
 
